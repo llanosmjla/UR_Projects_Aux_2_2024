@@ -17,7 +17,7 @@ ASuelo::ASuelo()
 	//creamos una esfera para el mesh
 	auto MeshCube = ConstructorHelpers::FObjectFinder<UStaticMesh>(TEXT("StaticMesh'/Engine/BasicShapes/Cube.Cube'"));
 	//Textura
-	auto Material = ConstructorHelpers::FObjectFinder<UMaterial>(TEXT("Material'/Game/Geometry/Meshes/Cube/Tierra/TierraMaterial.TierraMaterial'"));
+	ConstructorHelpers::FObjectFinder<UMaterial> Material = ConstructorHelpers::FObjectFinder<UMaterial>(TEXT("Material'/Game/Geometry/Meshes/Cube/Tierra/TierraMaterial.TierraMaterial'"));
 	//si la esfera se encuentra
 	if (MeshCube.Succeeded())
 	{
@@ -26,6 +26,7 @@ ASuelo::ASuelo()
 		//asignamos la textura al mesh
 		SueloMesh->SetMaterial(0, Material.Object);
 	}
+
 
 }
 

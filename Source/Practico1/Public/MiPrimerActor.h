@@ -15,12 +15,23 @@ public:
 	// Sets default values for this actor's properties
 	AMiPrimerActor();
 
-	//creamos una mesh para el actor
+	//Creamos un escene component para el actor con el cual se podra mover
+	UPROPERTY(VisibleAnywhere)
+	USceneComponent* SceneComp;
+
+	//Otro escene component que actua como hijo del anterior osea del SceneComp
+	UPROPERTY(VisibleAnywhere)
+	USceneComponent* SceneComp2;
+
+
+	//creamos una mesh statica para el actor
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* MeshComp;
 
 	UPROPERTY(VisibleAnywhere)
 	UStaticMeshComponent* MeshComp2;
+
+
 
 protected:
 	// Called when the game starts or when spawned
@@ -29,5 +40,6 @@ protected:
 public:	
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
+	void CambiarPosicionDelHijoRespectoAlPadre();
 
 };
