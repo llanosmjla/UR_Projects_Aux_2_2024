@@ -12,6 +12,7 @@ ABloque::ABloque()
 	//inicializamos variables de movimiento 
 	isMoving = false;
 	wasPressed = false;
+	TipoBloque = 1;
 
 	distance = 400.f;
 	FinalPosition = FVector(0, 0, 0);
